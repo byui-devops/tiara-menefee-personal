@@ -2,7 +2,7 @@ name: CI/CD – bulletin-board-app
 
 on:
   push:
-    
+   
     branches: [ Main ]
   pull_request:
     
@@ -15,7 +15,6 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      
       IMAGE_REPO: ${{ secrets.DOCKERHUB_USERNAME }}/bulletin-board-app
 
     steps:
@@ -48,9 +47,8 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
-        
+          # This is the corrected line
           username: ${{ secrets.DOCKERHUB_USERNAME }}
-        
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Docker metadata
