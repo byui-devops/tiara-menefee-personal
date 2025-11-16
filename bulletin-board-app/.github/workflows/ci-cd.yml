@@ -2,10 +2,8 @@ name: CI/CD – bulletin-board-app
 
 on:
   push:
-    
     branches: [ Main ]
   pull_request:
-  
     branches: [ Main ]
     types: [ closed ]
 
