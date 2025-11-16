@@ -1,25 +1,21 @@
 {
-  "name": "vue-event-bulletin",
+  "name": "bulletin-board-app",
   "version": "1.0.0",
-  "description": "Demo application for the scotch.io tutorial",
   "main": "server.js",
-  "author": "Ryan Chenkie, Jason Lam",
-  "license": "MIT",
-  "dependencies": {
-    "bootstrap": "^3.3.6",
-    "ejs": "^2.3.4",
-    "express": "^4.13.3",
-    "morgan": "^1.6.1",
-    "vue": "^1.0.10",
-    "vue-resource": "^0.1.17"
+  "scripts": {
+    "install": "npm ci",
+    "start": "node server.js",
+    "test": "jest --runInBand",
+    "test:coverage": "jest --coverage"
   },
   "devDependencies": {
-    "body-parser": "^1.14.1",
-    "errorhandler": "^1.4.2",
-    "method-override": "^2.3.5",
-    "morgan": "^1.6.1"
+    "jest": "^30.2.0"
   },
-  "scripts": {
-    "start": "node server.js"
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "errorhandler": "^1.5.1",
+    "express": "^5.1.0",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.1"
   }
 }
