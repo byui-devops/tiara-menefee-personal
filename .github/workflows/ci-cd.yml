@@ -2,10 +2,8 @@ name: CI/CD – bulletin-board-app
 
 on:
   push:
-   
     branches: [ Main ]
   pull_request:
-    #
     branches: [ Main ]
     types: [ closed ]
 
@@ -68,3 +66,4 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          

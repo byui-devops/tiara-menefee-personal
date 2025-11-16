@@ -1,35 +1,63 @@
-## Vue Events Bulletin Board
+# Git Guide
 
-This is the code for the Vue.js [tutorial on Scotch.io](https://scotch.io/tutorials/build-a-single-page-time-tracking-app-with-vue-js-introduction). In the tutorial we build a events bulletin board application and cover the basics of [Vue](http://vuejs.org/).
+# Git Guide
 
+This README provides a reference for the most common Git commands and workflows.
 
-## Installation
+---
 
-Change the directory to `node-bulletin-board` and follow the commands:
+## Add, Commit, Push, Pull
 
-1. Run `npm install`.
-2. Run `node server.js`.
-3. Visit [http://localhost:8080](http://localhost:8080).
+### Add files
 
-   <img width="1199" alt="image" src="https://github.com/user-attachments/assets/2cf0d1b5-5dde-491c-a158-8425df4576c5">
+```bash
+git add <file>       # stage a specific file
+git add .            # stage all changes in current directory
+git add -A           # stage all changes 
 
-## Using Docker
+## Commit Changes
 
-Clone the repository and run the following command:
-
-```
-docker build -t bulletin-board .
-docker run -d -p 8080:8080 bulletin-board
-```
+git commit -m "Commit message"    # commit with a message
+git commit -am "Commit message"   # stage and commit tracked files
 
 
-## RESTful API (contributed by Jason Lam)
+## Push Changes
 
-1. **Use Node.js & Express for backend server and router.**
-2. **RESTful requests towards the server to simulate CRUD on *events* model, instead of local hardcoded ones.**
-3. Translated into Traditional Chinese.
+git push -u origin <branch>   # push branch & set upstream
+git push                      # push after upstream is set
 
-## RESTful API written in Go 
 
-If you would like to use a backend written in Go, [thewhitetulip](http://github.com/thewhitetulip) has written on. See [the source code](https://github.com/thewhitetulip/go-vue-events).
- 
+#Push Updates
+
+git pull                      # fetch & merge
+git pull --rebase             # fetch & rebase 
+
+## Change URL
+
+git remote set-url origin <new-url>
+
+## Stash
+
+git stash push -m "WIP"    # save changes with a message
+git stash list             # show saved stashes
+git stash apply            # reapply most recent stash
+git stash pop              # reapply and remove most recent stash
+git stash drop stash@{0}   # delete a specific stash
+
+## Revert & Reset 
+
+git revert <commit>          # safely undo a commit 
+git reset --soft HEAD~1      # undo last commit, keep changes staged
+git reset --mixed HEAD~1     # undo last commit, keep changes unstaged
+git reset --hard HEAD~1      # undo last commit + discard changes 
+
+## History
+
+git log --oneline --graph --decorate --all  # compact history view
+git log -p -2                               # last 2 commits & diffs
+git diff                                    # unstaged changes
+git diff --staged                           # staged changes vs last commit
+git diff --name-only                        # show only changed file names
+git show <commit-hash>                      # details of a commit
+
+
