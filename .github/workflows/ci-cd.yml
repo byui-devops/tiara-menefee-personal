@@ -2,10 +2,8 @@ name: CI/CD – bulletin-board-app
 
 on:
   push:
-   
     branches: [ Main ]
   pull_request:
-    #
     branches: [ Main ]
     types: [ closed ]
 
@@ -13,6 +11,11 @@ jobs:
   build-test-deploy:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
     runs-on: ubuntu-latest
+
+   
+    permissions:
+      contents: read
+ 
 
     env:
       IMAGE_REPO: ${{ secrets.DOCKERHUB_USERNAME }}/bulletin-board-app
