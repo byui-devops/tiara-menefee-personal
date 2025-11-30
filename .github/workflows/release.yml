@@ -31,6 +31,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          submodules: true
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -48,3 +50,4 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply --auto-approve
+        #Work
