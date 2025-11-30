@@ -29,10 +29,13 @@ jobs:
         working-directory: iac
 
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
+        
+      - name: Setup Terraform CLI
+        uses: hashicorp/setup-terraform@v3
         with:
-          submodules: true
+          terraform_version: 1.0.0 
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -50,4 +53,3 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply --auto-approve
-        #Work
