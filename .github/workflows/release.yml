@@ -36,8 +36,6 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.0.0 
-        with:
-          submodules: true
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -55,4 +53,3 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply --auto-approve
-        #Work
